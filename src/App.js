@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+  const buttonTexts = [
+    {
+      id: 1,
+      text: "Twitter Link",
+      link: "https://twitter.com/",
+    },
+    {
+      id: 2,
+      text: "Zuri Team",
+      link: "https://internship.zuri.team/",
+    },
+    {
+      id: 3,
+      text: "Zuri Books",
+      link: "https://zuri.team/books/",
+    },
+    {
+      id: 4,
+      text: "Python Books",
+      link: "https://pythonbooks.org/",
+    },
+    {
+      id: 5,
+      text: "Background Check for Coders",
+      link: "https://www.coderbackground.com/",
+    },
+    {
+      id: 6,
+      text: "Design Books",
+      link: "https://designbooks.org/",
+    },
+  ];
+  return <div></div>;
+};
 
 export default App;
