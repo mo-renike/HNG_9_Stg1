@@ -1,7 +1,7 @@
 import React from "react";
 
 const App = () => {
-  const buttonTexts = [
+  const buttonData = [
     {
       id: 1,
       text: "Twitter Link",
@@ -33,7 +33,7 @@ const App = () => {
       link: "https://designbooks.org/",
     },
   ];
-  return <div></div>;
+  return <div className="app"></div>;
 };
 
 export default App;
