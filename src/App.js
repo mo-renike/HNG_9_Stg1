@@ -1,4 +1,7 @@
 import React from "react";
+import Profile from "./Components/Profile/Profile";
+// styling for the buttons section is "./Components/Buttons/Buttons.scss"
+import "./Components/Buttons/Buttons.scss";
 
 const App = () => {
   const buttonData = [
@@ -8,32 +11,48 @@ const App = () => {
       link: "https://twitter.com/",
     },
     {
-      id: 2,
+      id: "btn__zuri",
       text: "Zuri Team",
-      link: "https://internship.zuri.team/",
+      link: "https://training.zuri.team/",
     },
     {
-      id: 3,
+      id: "books",
       text: "Zuri Books",
-      link: "https://zuri.team/books/",
+      link: "http://books.zuri.team",
     },
     {
-      id: 4,
+      id: "book__python",
       text: "Python Books",
-      link: "https://pythonbooks.org/",
+      link: "https://books.zuri.team/python-for-beginners?ref_id=mo-renike",
     },
     {
-      id: 5,
+      id: "pitch",
       text: "Background Check for Coders",
-      link: "https://www.coderbackground.com/",
+      link: "https://background.zuri.team",
     },
     {
-      id: 6,
+      id: "book__design",
       text: "Design Books",
-      link: "https://designbooks.org/",
+      link: "https://books.zuri.team/design-rules",
     },
   ];
-  return <div className="app"></div>;
+  return (
+    <div className="app">
+      <Profile />
+      <div className="buttons">
+        {buttonData.map((button) => (
+          <a
+            className="buttons__btn"
+            href={button.link}
+            key={button.id}
+            id={button.id}
+          >
+            {button.text}
+          </a>
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default App;
