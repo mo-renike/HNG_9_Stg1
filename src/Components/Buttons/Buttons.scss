@@ -1,0 +1,34 @@
+@import "../../Styling/Mixins.scss";
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%; //80% of the width of the parent element 1152px of 1440px
+  &__btn {
+    border-radius: var(--border-radius-btn);
+    border: 1px solid var(--color-gray);
+    background-color: var(--color-gray);
+    color: #000;
+    font-size: 1.125rem; //18px
+    width: 100%;
+    padding: 0.825rem;
+    margin: 8px 0;
+    font-weight: 700;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    color: var(--text-color);
+    &:hover {
+      background-color: #000;
+      color: #fff;
+    }
+    @include respond(phone) {
+      font-size: 0.875rem; //14px
+    }
+  }
+  @include respond(phone) {
+    width: 91.5%; //91.5% of the width of the parent element 343px of 375px
+  }
+}
