@@ -10,6 +10,7 @@
   --btn-color: #eaecf0;
   --btn-color-hover: #d0d5dd;
   --border-radius-btn: 8px;
+  --font-16: 1rem;
 }
 
 body {
@@ -29,4 +30,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: auto;
+  max-width: 1440px;
 }

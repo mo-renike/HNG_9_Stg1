@@ -2,6 +2,7 @@ import React from "react";
 import Profile from "./Components/Profile/Profile";
 // styling for the buttons section is "./Components/Buttons/Buttons.scss"
 import "./Components/Buttons/Buttons.scss";
+import Footer from "./Components/Links/Footer/Footer";
 
 const App = () => {
   const buttonData = [
@@ -51,6 +52,7 @@ const App = () => {
           </a>
         ))}
       </div>
+      <Footer />
     </div>
   );
 };
