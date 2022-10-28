@@ -6,28 +6,31 @@
   justify-content: space-between;
   align-items: center;
   width: 80%; //80% of the width of the parent element 1152px of 1440px
+
   &__btn {
     border-radius: var(--border-radius-btn);
-    border: 1px solid var(--color-gray);
-    background-color: var(--color-gray);
-    color: #000;
+    border: 1px solid var(--btn-color);
+    background-color: var(--btn-color);
     font-size: 1.125rem; //18px
     width: 100%;
-    padding: 0.825rem;
+    padding: 0.8rem;
     margin: 8px 0;
-    font-weight: 700;
+    //font-weight: 700;
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease-in-out;
     color: var(--text-color);
+    filter: drop-shadow(0px 1px 2px rgba(16, 24, 40, 0.05));
+
     &:hover {
-      background-color: #000;
-      color: #fff;
+      background-color: var(--btn-color-hover);
     }
+
     @include respond(phone) {
       font-size: 0.875rem; //14px
     }
   }
+
   @include respond(phone) {
     width: 91.5%; //91.5% of the width of the parent element 343px of 375px
   }
