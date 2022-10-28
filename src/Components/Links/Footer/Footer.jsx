@@ -5,7 +5,7 @@ import "./Footer.scss";
 
 const Footer = () => {
     return (
-        <div className="footer">
+        <footer className="footer">
             <div className="footer__img">
                 <img src={Zuri} alt="Zuri internship logo" />
             </div>
@@ -15,7 +15,7 @@ const Footer = () => {
             <div className="footer__img">
                 <img src={I4G} alt="Ingresive for good logo" />
             </div>
-        </div>
+        </footer>
     )
 }
 
