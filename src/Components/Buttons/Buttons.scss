@@ -13,7 +13,7 @@
     background-color: var(--btn-color);
     font-size: 1.125rem; //18px
     width: 100%;
-    padding: 0.8rem;
+    padding: 0.5rem;
     margin: 8px 0;
     //font-weight: 700;
     text-decoration: none;
@@ -33,5 +33,11 @@
 
   @include respond(phone) {
     width: 91.5%; //91.5% of the width of the parent element 343px of 375px
+  }
+  &__subtext {
+    opacity: 0.6;
+    font-size: 0.7rem; //11px
+    display: block;
+    margin-top: 0.3rem;
   }
 }

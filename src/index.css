@@ -32,4 +32,30 @@ body {
   justify-content: center;
   margin: auto;
   max-width: 1440px;
+  position: relative;
+}
+
+.share {
+  position: absolute;
+  top: 3rem;
+  right: 8rem;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+.share_mobile {
+  position: absolute;
+  top: 3rem;
+  right: 2rem;
+  display: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .share {
+    display: none;
+  }
+  .share_mobile {
+    display: block;
+  }
 }
