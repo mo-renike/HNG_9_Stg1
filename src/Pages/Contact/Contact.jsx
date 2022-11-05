@@ -5,7 +5,6 @@ import "./Contact.scss";
 const Contact = () => {
 
     // form validation    
-    //const [isDisabled, setIsDisabled] = React.useState(true);
     const [form, setForm] = React.useState({
         fname: "",
         lname: "",
@@ -19,28 +18,6 @@ const Contact = () => {
         email: "",
         message: ""
     });
-    // clear form after submitting if no errors are present
-    React.useEffect(() => {
-        if (Object.keys(errors).length === 0) {
-            alert("Form submitted successfully");
-            setForm({
-                fname: "",
-                lname: "",
-                email: "",
-                message: ""
-            });
-        }
-        // disable submit button if there are errors 
-        // if (form.fname && form.lname && form.email && form.message) {
-        //     setIsDisabled(false);
-        // } else {
-        //     setIsDisabled(true);
-        // }
-    }, [errors]);
-
-    // disable submit button if form is invalid
-
-
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -49,13 +26,6 @@ const Contact = () => {
             [name]: value
         });
     };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        handleChange(e);
-        setErrors(validate(form));
-    };
-
     const validate = (form) => {
         let errors = {};
         // COMMENTED THESE ONES OUT COZ THEY NOT IN THE DESIGN
@@ -72,9 +42,31 @@ const Contact = () => {
         // }
         if (!form.message) {
             errors.message = "Message is required";
+            document.getElementById("message").classList.add("input_error");
+        } else {
+            errors.message = "";
+            document.getElementById("message").classList.remove("input_error");
         }
-
         return errors;
+    };
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleChange(e);
+        setErrors(validate(form));
+        clearForm();
+    };
+
+    // clear form after submit if all fields are valid, alert user if not
+    const clearForm = () => {
+        if (Object.keys(errors).length === 0) {
+            setForm({
+                fname: "",
+                lname: "",
+                email: "",
+                message: ""
+            });
+            alert("Message sent successfully");
+        }
     };
 
 
@@ -110,11 +102,10 @@ const Contact = () => {
                     {errors.message && <p className="error">{errors.message}</p>}
                 </div>
                 <div className="contact__form__group-check">
-                    <input type="checkbox" name="checkbox" id="checkbox" required="required" />
+                    <input type="checkbox" name="checkbox" id="checkbox" />
                     <label htmlFor="checkbox">You agree to providing your data to Morenike Oyewole who may contact you</label>
                 </div>
                 <div className="contact__form__group">
-                    {/* disable button if there are errors  */}
                     <button disabled={""} id="btn__submit" type="submit">Submit</button>
                 </div>
             </form>
