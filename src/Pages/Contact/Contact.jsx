@@ -9,7 +9,7 @@ const Contact = () => {
         fname: "",
         lname: "",
         email: "",
-        message: "",
+        message: "Hello Morenike, hope you are doing great. Let us collaborate on project XYZ.",
     });
 
     const [errors, setErrors] = React.useState({
@@ -72,30 +72,27 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        handleChange(e);
         setErrors(validate(form));
         clearForm();
     };
 
-    // clear form after submit if all fields are valid, alert user if not
+
     const clearForm = () => {
-        if (Object.keys(errors).length === 0) {
+        if (Object.values(errors).every((x) => x === "")) {
             setForm({
                 fname: "",
                 lname: "",
                 email: "",
-                message: ""
+                message: "",
             });
-            alert("Message sent successfully");
-        }
+            document.getElementById("checkbox").checked = false;
+        };
     };
 
 
     return (
         <div className="contact">
-            {/* build form */}
-            <Heading>Contact</Heading>
-            <form onSubmit={handleSubmit} noValidate className="contact__form">
+            <form onSubmit={handleSubmit} id="form" noValidate className="contact__form">
                 <div className="contact__header">
                     <Heading title="Contact Me" />
                     <p>
@@ -144,6 +141,7 @@ const Contact = () => {
                         id="message"
                         value={form.message}
                         onChange={handleChange}
+                        rows="5"
                     />
                     {errors.message && <p className="error">{errors.message}</p>}
                 </div>
