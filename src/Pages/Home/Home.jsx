@@ -69,7 +69,7 @@ const Home = () => {
                         id={button.id}
                     >
                         {button.text}
-                        <sub className="buttons__subtext">{button.subtext}</sub>
+                        {/* <sub className="buttons__subtext">{button.subtext}</sub> */}
                     </a>
                 ))}
                 <Link to="/contact" className="buttons__btn" id="contact">Contact Me</Link>
