@@ -1,0 +1,92 @@
+import React from "react";
+import { Heading } from "../../Components/Typography/Typography";
+import "./Contact.scss";
+
+const Contact = () => {
+
+    // form validation
+    const [form, setForm] = React.useState({
+        fname: "",
+        lname: "",
+        email: "",
+        message: ""
+    });
+
+    const [errors, setErrors] = React.useState({
+        firstname: "",
+        lastname: "",
+        email: "",
+        message: ""
+
+    });
+
+    // set all form data
+    const handleFormChange = (e) => {
+        setForm({
+            ...form,
+            [e.target.name]: e.target.value
+        });
+
+        console.log(form);
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        // check if all fields are filled
+        if (form.name && form.email && form.message) {
+            // send form data to server
+            console.log(form);
+        } else {
+            // set errors
+            setErrors({
+                name: !form.name ? "Name is required" : "",
+                email: !form.email ? "Email is required" : "",
+                message: !form.message ? "Message is required" : ""
+            });
+        }
+    }
+
+
+    return (
+        <div className="contact">
+            <form onSubmit={handleFormChange} action="" className="contact__form">
+                <div className="contact__header">
+                    <Heading title="Contact Me" />
+                    <p>Hi there, contact me to ask me about anything you have in mind</p>
+                </div>
+                <div className="d-f">
+                    <div className="contact__form__group">
+                        <label htmlFor="firstname">First Name</label>
+                        <input type="text" name="firstname" id="first_name" placeholder="Enter your first name" />
+                        {/* firstname  error message */}
+                        {errors.firstname && <p className="error">{errors.firstname}</p>}
+                    </div>
+                    <div className="contact__form__group">
+                        <label htmlFor="lastname">Last Name</label>
+                        <input type="text" name="lastname" id="last_name" placeholder="Enter your Last name" />
+                        <span className="err"> </span>
+                    </div>
+                </div>
+
+                <div className="contact__form__group">
+                    <label htmlFor="email">Email</label>
+                    <input type="email" name="email" id="email" placeholder="youremail@email.com" />
+                    <span className="err"> </span>
+                </div>
+                <div className="contact__form__group">
+                    <label htmlFor="message">Message</label>
+                    <textarea name="message" id="message" rows="5" placeholder="Send me a message and I will reply you as soon a s possible" />
+                </div>
+                <div className="contact__form__group-check">
+                    <input type="checkbox" name="checkbox" id="checkbox" />
+                    <label htmlFor="checkbox">You agree to providing your data to Naza who may coontact you</label>
+                </div>
+                <div className="contact__form__group">
+                    <button onClick={handleSubmit} id="btn__submit" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    );
+};
+
+export default Contact;
