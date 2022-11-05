@@ -32,7 +32,7 @@
   }
 
   @include respond(phone) {
-    width: 91.5%; //91.5% of the width of the parent element 343px of 375px
+    width: 91.5% !important; //91.5% of the width of the parent element 343px of 375px
   }
   &__subtext {
     opacity: 0.6;
