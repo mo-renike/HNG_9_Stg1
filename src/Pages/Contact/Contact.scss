@@ -1,0 +1,94 @@
+@import "../../Styling//Mixins.scss";
+
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  font-family: var(--inter-font);
+
+  &__header {
+    margin: 1.5rem 0;
+    .heading {
+      color: #101828;
+      font-weight: 600;
+    }
+
+    p {
+      color: #475467;
+    }
+  }
+  &__form {
+    width: 50%;
+    margin: 5rem 0;
+    padding: 1rem;
+    @include respond(phone) {
+      width: 100%;
+    }
+    &__group {
+      display: flex;
+      flex-direction: column;
+      margin: 0.6rem 0;
+      //   input:valid {
+      //     border: 1px solid #84caff;
+      //     box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05), 0px 0px 0px 4px #d1e9ff;
+      //   }
+
+      input,
+      textarea {
+        border: 1px solid #d0d5dd;
+        padding: 10px 7px;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+        border-radius: 8px;
+        font-family: var(--inter-font);
+      }
+      label {
+        color: #344054;
+        font-size: 0.875rem; //14px
+        margin-bottom: 0.4rem;
+        font-weight: 500;
+      }
+      ::placeholder {
+        color: #667085;
+        font-size: 1rem;
+        font-family: var(--inter-font);
+      }
+      button {
+        background-color: #1570ef;
+        color: #fff;
+        border: 1px solid #1570ef;
+        box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+        border-radius: 8px;
+        padding: 12px 20px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: var(--transition);
+        &:hover {
+          background: #175cd3;
+          border: 1px solid #175cd3;
+        }
+        //disabled button
+        &:disabled {
+          background: #b2ddff;
+          color: #fff;
+          border: 1px solid #b2ddff;
+          cursor: not-allowed;
+        }
+      }
+      &-check {
+        flex-direction: row;
+        color: #475467;
+        margin: 1.4rem 0 1rem;
+        input {
+          margin-right: 0.5rem;
+        }
+      }
+      .error {
+        color: red;
+        font-size: 0.8rem;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+}
